@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+		<title>Course Registration</title>
+		<h:outputStylesheet library="css" name="style.css"/>
+	</h:head>
+	<h:body>
+		<h1>Student Registration Site</h1>
+		<div class="register">
+			<h1>Select the course to register and click on Submit:</h1>
+			<h:form>
+			<h:messages class="error" globalOnly="true"/>
+			<div class="select_field">
+				<h:selectOneMenu value="#{CoursesSupportBean.courseSelected}" required="true">
+				<f:selectItems value="#{CoursesSupportBean.courseList}"/>
+				</h:selectOneMenu>
+			</div>
+			<br></br>
+			<div class="submit">
+				<h:commandButton value="Submit" action="registrationResult"/>
+			</div>
+		 	</h:form>
+		 	<div class="logout">
+		 		<p>or <span><a href="logout.jsp">Logout</a></span> here.</p>
+		 	</div>
+		</div>
+	</h:body>
+</html>
